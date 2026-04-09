@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    border: 2px solid black;
+    border: 5px solid black;
 }
 header {
     max-width: 400px;
@@ -11,11 +11,12 @@ header {
 .coverImg{
     width: 100%;
     display: block;
-    height: 150px;
-    position:relative;
+    height: 140px;
+    object-fit: cover;
+    object-position: top;
 }
 main {
-   max-width: 400px;
+    max-width: 400px;
     margin: 0 auto; 
 }
 .complete-menu-form {
@@ -34,19 +35,20 @@ main {
     padding: 10px 0px;
     margin: 0;
 }
-.menu1 img, .menu2 img, .menu3 img {
+.menu-container .food-img{
     width: 60px;
-    border: 2px solid black;
     height: auto;
     padding: 10px;
+    border: 2px solid black;
     cursor: pointer;
     transition: transform 0.15s ease;
 }
 .food-img:hover, .food-img:focus {
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
-.food-img:active {
-    transform: scale(1);
+.food-img:hover ~ .add-btn-container button {
+    /* background-color: grey; */
+    transform: scale(1.1);
 }
 
 .description {
