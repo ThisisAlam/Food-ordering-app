@@ -1,4 +1,15 @@
 main .coverImg{
     width: 400px;
-    background-size: contain;
+}
+.menu1 img, .menu2 img, .menu3 img {
+    width: 50px;
+}
+.menu-container {
+    padding: 20px;
+}
+.menu1, .menu2, .menu3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
