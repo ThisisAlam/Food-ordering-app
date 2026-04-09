@@ -1,54 +1,56 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>My App</title>
         <link rel="stylesheet" href="index.css">
     </head>
     <body>
-        <main class="">
+        <header class="">
             <img class="coverImg" id="coverImgId" src="images/coverImage-2.png" 
-            alt="Wide banner for “Jimmy’s Food” featuring pizza, burger, fries, and beer on a bright festive background.
-">
-        </main>
+            alt="Wide banner for “Jimmy’s Food” featuring pizza, burger, fries, and beer on a bright festive background.">
+        </header>
+    <main>
         <section class="complete-menu-form">
             <div class="menu-container">
                 <div class="menu1">
-                    <img src="images/pizza.PNG" alt="pizza image">
-                    <div>
-                        <p>name</p>
-                        <p>ingredients</p>
-                        <p>price</p>
+                    <img class="food-img" src="images/pizza.PNG" alt="pizza image">
+                    <div class="description">
+                        <p class="food-name" id="food-name">name</p>
+                        <p class="food-ingredients" id="food-ingredients">ingredients</p>
+                        <p class="food-price" id="food-price">price</p>
                     </div>
-                    <div>
+                    <div class="add-btn-container">
                         <button>+</button>
                     </div>
                 </div>
                 <div class="menu2">
-                    <img src="images/burger.PNG" alt="pizza image">
-                    <div>
-                        <p>name</p>
-                        <p>ingredients</p>
-                        <p>price</p>
+                    <img class="food-img" src="images/burger.PNG" alt="pizza image">
+                    <div class="description">
+                        <p class="food-name" id="food-name">name</p>
+                        <p class="food-ingredients" id="food-ingredients">ingredients</p>
+                        <p class="food-price" id="food-price">price</p>
                     </div>
-                    <div>
+                    <div class="add-btn-container">
                         <button>+</button>
                     </div>
                 </div>
                 <div class="menu3">
-                    <img src="images/beer.PNG" alt="pizza image">
-                    <div>
-                        <p>name</p>
-                        <p>ingredients</p>
-                        <p>price</p>
+                    <img class="food-img" src="images/beer.PNG" alt="pizza image">
+                    <div class="description">
+                        <p class="food-name" id="food-name">name</p>
+                        <p class="food-ingredients" id="food-ingredients">ingredients</p>
+                        <p class="food-price" id="food-price">price</p>
                     </div>
-                    <div>
+                    <div class="add-btn-container">
                         <button>+</button>
                     </div>
                 </div>
             </div>
             <div class="formUpdate">
-                formUpdate by javascript
             </div>
         </section>
+    </main>
 	    <script src="index.js" type="module"></script>
     </body>
 </html>

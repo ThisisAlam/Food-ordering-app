@@ -1,15 +1,88 @@
-main .coverImg{
-    width: 400px;
+body {
+    margin: 0;
+    padding: 0;
+    border: 2px solid black;
 }
-.menu1 img, .menu2 img, .menu3 img {
-    width: 50px;
+header {
+    max-width: 400px;
+    margin: 0 auto;
+    border: 2px solid black;
+}
+.coverImg{
+    width: 100%;
+    display: block;
+    height: 150px;
+    position:relative;
+}
+main {
+   max-width: 400px;
+    margin: 0 auto; 
+}
+.complete-menu-form {
+    border: 2px solid black;
 }
 .menu-container {
-    padding: 20px;
+    position: relative;
+    padding: 15px;
 }
 .menu1, .menu2, .menu3 {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    border: 2px solid black;
+    padding: 10px 0px;
+    margin: 0;
+}
+.menu1 img, .menu2 img, .menu3 img {
+    width: 60px;
+    border: 2px solid black;
+    height: auto;
+    padding: 10px;
+    cursor: pointer;
+    transition: transform 0.15s ease;
+}
+.food-img:hover, .food-img:focus {
+    transform: scale(1.05);
+}
+.food-img:active {
+    transform: scale(1);
+}
+
+.description {
+    border: 2px solid black;
+    width: 100%;
+    padding: 10px;
+}
+p {
+    margin: 0;
+}
+.add-btn-container {
+    width: 50px;
+    height: auto;
+    border: 2px solid black;
+    padding: 10px;
+}
+.add-btn-container button {
+    font-size: 30px;
+    width: 50px;
+    height: 50px;
+    color: grey;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.15s ease;
+}
+button:hover, button:focus {
+    transform: scale(1.05);
+}
+button:active {
+    transform: scale(1);
+}
+
+.formUpdate{
+    border: 2px solid black;
+}
+
+.contactForm {
+    display: none;
 }
