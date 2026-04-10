@@ -13,69 +13,31 @@
         </header>
     <main>
         <section class="complete-menu-form">
-            <div class="menu-container">
-                <div class="menu-item">
-                    <img class="food-img" src="images/pizza.PNG" alt="pizza image">
-                    <div class="description">
-                        <p class="name" id="name">name</p>
-                        <p class="ingredients" id="ingredients">ingredients</p>
-                        <p class="price" id="price">price</p>
-                    </div>
-                    <div class="add-btn-container">
-                        <button>+</button>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <img class="food-img" src="images/burger.PNG" alt="pizza image">
-                    <div class="description">
-                        <p class="name" id="name">name</p>
-                        <p class="ingredients" id="ingredients">ingredients</p>
-                        <p class="price" id="price">price</p>
-                    </div>
-                    <div class="add-btn-container">
-                        <button id="add-btn">+</button>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <img class="food-img" src="images/beer.PNG" alt="pizza image">
-                    <div class="description">
-                        <p class="name" id="name">name</p>
-                        <p class="ingredients" id="ingredients">ingredients</p>
-                        <p class="price" id="price">price</p>
-                    </div>
-                    <div class="add-btn-container">
-                        <button>+</button>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <img class="food-img" src="images/pizza.PNG" alt="pizza image">
-                    <div class="description">
-                        <p class="name" id="name">name</p>
-                        <p class="ingredients" id="ingredients">ingredients</p>
-                        <p class="price" id="price">price</p>
-                    </div>
-                    <div class="add-btn-container">
-                        <button>+</button>
-                    </div>
-                </div>
+            <div class="menu-container" id="menu-container">
             </div>
             <div class="form-update-container">
-                <div class="form-order">
+                <div class="form-order ">
                     <p class="order-form-title">Your order</p>
-                    <div class="order-container">
+                    <div class="order-container" id="order-container">
                         <div class="order">
                             <p class="name">pizza</p>
-                            <button class="remove-btn">remover</button>
+                            <div class="button-container">
+                                <button class="remove-btn">remover</button>
+                            </div>
                             <p class="price">Price:</p>
                         </div>
                         <div class="order">
                             <p class="name">beer</p>
-                            <button class="remove-btn">remover</button>
+                            <div class="button-container">
+                                <button class="remove-btn">remover</button>
+                            </div>
                             <p class="price">Price:</p>
                         </div>
                         <div class="order">
                             <p class="name">burger</p>
-                            <button class="remove-btn">remover</button>
+                            <div class="button-container">
+                                <button class="remove-btn">remover</button>
+                            </div>
                             <p class="price">Price:</p>
                         </div>
                     </div>
@@ -92,7 +54,7 @@
                     <input type="text" placeholder="Enter your name" required>
                     <input type="number" placeholder="Enter card number" required>
                     <input type="number" placeholder="Enter CVV" required>
-                    <button class="pay-btn">Pay</button>
+                    <button type="submit" class="pay-btn">Pay</button>
                 </div>
             </div>
         </section>

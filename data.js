@@ -3,21 +3,28 @@ export const menuArray = [
         name: "Pizza",
         ingredients: ["pepperoni", "mushrom", "mozarella"],
         price: 14,
-        emoji: "🍕",
+        emoji: "/images/pizza.PNG",
         id: 0
     },
     {
         name: "Hamburger",
         ingredients: ["beef", "cheese", "lettuce"],
         price: 12,
-        emoji: "🍔",
+        emoji: "/images/burger.PNG",
         id: 1
     },
         {
         name: "Beer",
         ingredients: ["grain, hops, yeast, water"],
         price: 12,
-        emoji: "🍺",
+        emoji: "/images/beer.PNG",
         id: 2
+    },
+        {
+        name: "Beer-lemon",
+        ingredients: ["grain, hops, yeast, water, lemon"],
+        price: 15,
+        emoji: "/images/beer.PNG",
+        id: 3
     }
 ]
