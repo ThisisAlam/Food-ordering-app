@@ -21,6 +21,7 @@ function displayMenu(testArray){
 
 let selectedOrderArray = []
 document.addEventListener('click', function(e){
+    e.preventDefault
     const targetId = e.target.dataset.btn
     for (let arr of testArray){
         if (Number(targetId) === arr.id){
@@ -45,18 +46,23 @@ document.addEventListener('click', function(e){
         render()
     }
 
-    //  document.getElementById('complete-order-btn')
     if(e.target.dataset.completeOrderBtn){
         if(selectedOrderArray.length > 0){
-            document.getElementById('overlay').classList.remove('hidden')
+            overlayEl.classList.remove('hidden')
         }
     }
 
     if(e.target.dataset.payFormCloseBtn){
-        document.getElementById('overlay').classList.add('hidden')
+        overlayEl.getElementById('overlay').classList.add('hidden')
     }
 
-    
+    if (e.target.dataset.payBtn) {
+        if(usernameId.value && cardId.value && cvvId.value){
+            overlayEl.getElementById('overlay').classList.add('hidden')
+            
+            formUpdateContainer.getElementById('overlay').classList.add('hidden')
+        }
+    }
 })
 
 function displaySelectedMenu(selectedOrderArray){
@@ -66,9 +72,9 @@ function displaySelectedMenu(selectedOrderArray){
     }
     return `<div class="form-order ">
                 <p class="order-form-title">Your order</p>
-            <div class="order-container" id="order-container">
-            </div>
-                 <div class="total-price-container">
+                <div class="order-container" id="order-container">
+                </div>
+                <div class="total-price-container">
                     <p class="total-price-text">Total Price:</p>
                     <p class="total-price">$${sumOfPrices}</p>
                 </div>
@@ -93,21 +99,29 @@ function selectedOrder(selectedOrderArray){
     return orderList
 }
 
-const overlay = document.getElementById('overlay')
+const usernameId = document.getElementById('username-id')
+const cardId = document.getElementById('card-id')
+const cvvId = document.getElementById('cvv-id')
+
+const overlayEl = document.getElementById('overlay')
 function paymentForm(){
     return `<form class="card-details">
                 <div class="close-btn">
                     <button id="pay-form-close-btn" data-pay-form-close-btn="true">x</button>
                 </div>
                 <p class="form-title">Enter card details</p>
-                <input type="text" name="username" placeholder="Enter your name" required>
-                <input type="number" name="card" placeholder="Enter card number" required>
-                <input type="number" name="CVV" placeholder="Enter CVV" required>
-                <button type="submit" class="pay-btn">Pay</button>
+                <label for="username-id">Full Name</label>
+                <input id="username-id" type="text" name="username" placeholder="Enter your name" required>
+                <label for="card-id">Card Number</label>
+                <input id="card-id" type="number" name="card" placeholder="Enter card number" required>
+                <label for="cvv-id">CVV Number</label>
+                <input id="cvv-id" type="number" name="CVV" placeholder="Enter CVV" required>
+                <button type="submit" class="pay-btn" data-pay-btn="true">Pay</button>
             </form>`
-}
+        }
 
 const formUpdateContainer = document.getElementById('form-update-container')
+
 function render() {
     menuContainer.innerHTML = displayMenu(testArray)
         
