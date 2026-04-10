@@ -43,6 +43,19 @@ document.addEventListener('click', function(e){
         console.log(selectedOrderArray)        
         render()
     }
+
+    //  document.getElementById('complete-order-btn')
+    if(e.target.dataset.completeOrderBtn){
+        if(selectedOrderArray.length > 0){
+            document.getElementById('overlay').classList.remove('hidden')
+        }
+    }
+
+    if(e.target.dataset.payFormCloseBtn){
+        document.getElementById('overlay').classList.add('hidden')
+    }
+
+
 })
 
 function displaySelectedMenu(selectedOrderArray){
@@ -58,7 +71,7 @@ function displaySelectedMenu(selectedOrderArray){
                     <p class="total-price-text">Total Price:</p>
                     <p class="total-price">$${sumOfPrices}</p>
                 </div>
-                <button class="complete-order-btn">Complete Order</button>
+                <button class="complete-order-btn" id="complete-order-btn" data-complete-order-btn="true">Complete Order</button>
             </div>`
 }
 
