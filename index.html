@@ -7,47 +7,93 @@
     </head>
     <body>
         <header class="">
+            <h1 class="floating-label">Jimmy's Food</h1>
             <img class="coverImg" id="coverImgId" src="images/coverImage-2.png" 
             alt="Wide banner for “Jimmy’s Food” featuring pizza, burger, fries, and beer on a bright festive background.">
         </header>
     <main>
         <section class="complete-menu-form">
             <div class="menu-container">
-                <div class="menu1">
+                <div class="menu-item">
                     <img class="food-img" src="images/pizza.PNG" alt="pizza image">
                     <div class="description">
-                        <p class="food-name" id="food-name">name</p>
-                        <p class="food-ingredients" id="food-ingredients">ingredients</p>
-                        <p class="food-price" id="food-price">price</p>
+                        <p class="name" id="name">name</p>
+                        <p class="ingredients" id="ingredients">ingredients</p>
+                        <p class="price" id="price">price</p>
                     </div>
                     <div class="add-btn-container">
                         <button>+</button>
                     </div>
                 </div>
-                <div class="menu2">
+                <div class="menu-item">
                     <img class="food-img" src="images/burger.PNG" alt="pizza image">
                     <div class="description">
-                        <p class="food-name" id="food-name">name</p>
-                        <p class="food-ingredients" id="food-ingredients">ingredients</p>
-                        <p class="food-price" id="food-price">price</p>
+                        <p class="name" id="name">name</p>
+                        <p class="ingredients" id="ingredients">ingredients</p>
+                        <p class="price" id="price">price</p>
                     </div>
                     <div class="add-btn-container">
                         <button id="add-btn">+</button>
                     </div>
                 </div>
-                <div class="menu3">
+                <div class="menu-item">
                     <img class="food-img" src="images/beer.PNG" alt="pizza image">
                     <div class="description">
-                        <p class="food-name" id="food-name">name</p>
-                        <p class="food-ingredients" id="food-ingredients">ingredients</p>
-                        <p class="food-price" id="food-price">price</p>
+                        <p class="name" id="name">name</p>
+                        <p class="ingredients" id="ingredients">ingredients</p>
+                        <p class="price" id="price">price</p>
+                    </div>
+                    <div class="add-btn-container">
+                        <button>+</button>
+                    </div>
+                </div>
+                <div class="menu-item">
+                    <img class="food-img" src="images/pizza.PNG" alt="pizza image">
+                    <div class="description">
+                        <p class="name" id="name">name</p>
+                        <p class="ingredients" id="ingredients">ingredients</p>
+                        <p class="price" id="price">price</p>
                     </div>
                     <div class="add-btn-container">
                         <button>+</button>
                     </div>
                 </div>
             </div>
-            <div class="formUpdate">
+            <div class="form-update-container">
+                <div class="form-order">
+                    <p class="order-form-title">Your order</p>
+                    <div class="order-container">
+                        <div class="order">
+                            <p class="name">pizza</p>
+                            <button class="remove-btn">remover</button>
+                            <p class="price">Price:</p>
+                        </div>
+                        <div class="order">
+                            <p class="name">beer</p>
+                            <button class="remove-btn">remover</button>
+                            <p class="price">Price:</p>
+                        </div>
+                        <div class="order">
+                            <p class="name">burger</p>
+                            <button class="remove-btn">remover</button>
+                            <p class="price">Price:</p>
+                        </div>
+                    </div>
+                    <div class="total-price-container">
+                            <p class="total-price-tag">Total Price:</p>
+                            <p class="total-price">Price:</p>
+                        </div>
+                    <button class="complete-order-btn">Complete Order</button>
+                </div>
+            </div>
+            <div class="overlay hidden">
+                <div class="card-details">
+                    <h2>Enter card details</h2>
+                    <input type="text" placeholder="Enter your name" required>
+                    <input type="number" placeholder="Enter card number" required>
+                    <input type="number" placeholder="Enter CVV" required>
+                    <button class="pay-btn">Pay</button>
+                </div>
             </div>
         </section>
     </main>

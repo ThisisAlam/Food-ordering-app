@@ -1,19 +1,30 @@
 body {
     margin: 0;
     padding: 0;
-    border: 5px solid black;
+    font-family: sans-serif;
+    /* border: 5px solid black; */
 }
 header {
     max-width: 400px;
     margin: 0 auto;
     border: 2px solid black;
+    position:relative;
+}
+.floating-label{
+    position: absolute;
+    width: 100%;
+    left: 15%;
+    color: azure;
+    font-size: 40px;
+    font-weight: bold;
+    text-shadow: 0 0 10px black;
 }
 .coverImg{
     width: 100%;
     display: block;
-    height: 140px;
+    height: 100px;
     object-fit: cover;
-    object-position: top;
+    object-position: bottom;
 }
 main {
     max-width: 400px;
@@ -25,15 +36,23 @@ main {
 .menu-container {
     position: relative;
     padding: 15px;
+    overflow-y: scroll;
+    height: 300px;
 }
-.menu1, .menu2, .menu3 {
+.menu-item {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
+    gap: 5px;
     border: 2px solid black;
     padding: 10px 0px;
-    margin: 0;
+    position: relative;
+}
+.menu-item:hover .add-btn-container button {
+    color: rgb(255, 123, 0);
+    font-weight: bold;
+    transform: scale(1.1);
+    
 }
 .menu-container .food-img{
     width: 60px;
@@ -46,24 +65,27 @@ main {
 .food-img:hover, .food-img:focus {
     transform: scale(1.02);
 }
-.food-img:hover ~ .add-btn-container button {
-    /* background-color: grey; */
+/* .food-img:hover ~ .add-btn-container button {
+    color: rgb(255, 123, 0); 
+    font-weight: bold;
     transform: scale(1.1);
-}
+} */
 
 .description {
     border: 2px solid black;
-    width: 100%;
+    flex: 1;
     padding: 10px;
 }
 p {
     margin: 0;
 }
 .add-btn-container {
-    width: 50px;
-    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border: 2px solid black;
     padding: 10px;
+
 }
 .add-btn-container button {
     font-size: 30px;
@@ -81,10 +103,107 @@ button:active {
     transform: scale(1);
 }
 
-.formUpdate{
+.form-update-container{
     border: 2px solid black;
+    padding: 10px 15px;
 }
 
-.contactForm {
+
+/* You Order and Total Price Container */
+.form-order{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;   
+    width: 100%;
+    position: relative;
+    /* margin-top: 10px; */
+    border: 2px solid black;
+    /* display: none; */
+}
+.order-form-title{
+    border: 2px solid black;
+    width: 100%;
+    padding: 5px 0px;
+    text-align: center;
+}
+.order-container{
+    overflow-y: scroll;
+    border: 2px solid black;
+    width: 100%;
+    height:  100px;
+}
+.order{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    padding: 10px;
+    border: 2px dotted black;
+}
+
+.total-price-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    border: 2px solid black;
+    width: 100%;
+    padding: 10px 0px;
+}
+.total-price-tag, .total-price{
+    padding: 5px;
+}
+.complete-order-btn{
+    margin: 5px auto;
+    padding: 5px 100px;
+    background-color: rgb(255, 136, 0);
+    color: white;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.card-details{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    background: white;
+    width: 250px;
+    padding: 20px;
+    border-radius: 8px;
+}
+.card-details input {
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-size: 14px;
+}
+.card-details input:focus {
+    outline: none;
+    border-color: rgb(236, 195, 132);
+}
+.pay-btn {
+    margin-top: 10px;
+    padding: 10px 60px;
+    font-size: 16px;
+    font-weight: bold;
+
+    border: none;
+    border-radius: 5px;
+    background: rgb(255, 136, 0);
+    color: white;
+    cursor: pointer;
+}
+.hidden {
     display: none;
+    position: none;
 }
