@@ -51,27 +51,27 @@ function displaySelectedMenu(selectedOrderArray){
         sumOfPrices += obj.price
     }
     return `<div class="form-order ">
-            <p class="order-form-title">Your order</p>
+                <p class="order-form-title">Your order</p>
             <div class="order-container" id="order-container">
             </div>
-            <div class="total-price-container">
-                    <p class="total-price-tag">Total Price:</p>
+                 <div class="total-price-container">
+                    <p class="total-price-text">Total Price:</p>
                     <p class="total-price">$${sumOfPrices}</p>
                 </div>
-            <button class="complete-order-btn">Complete Order</button>
-        </div>`
+                <button class="complete-order-btn">Complete Order</button>
+            </div>`
 }
 
 
 function selectedOrder(selectedOrderArray){
     const orderList = selectedOrderArray.map((orderArr) => {
         return `<div class="order">
-        <p class="name">${orderArr.name}</p>
-        <div class="button-container">
-        <button class="remove-btn" data-remove-btn="${orderArr.id}">remover</button>
-        </div>
-        <p class="price">$${orderArr.price}</p>
-        </div>`
+                    <p class="name">${orderArr.name}</p>
+                    <div class="button-container">
+                        <button class="remove-btn" data-remove-btn="${orderArr.id}">remover</button>
+                    </div>
+                <p class="price">$${orderArr.price}</p>
+            </div>`
     }).join('')
     return orderList
 }

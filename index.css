@@ -3,6 +3,7 @@ body {
     padding: 0;
     font-family: sans-serif;
     /* border: 5px solid black; */
+    /* max-height: 700px; */
 }
 header {
     max-width: 400px;
@@ -32,12 +33,17 @@ main {
 }
 .complete-menu-form {
     border: 2px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    /* gap:10px; */
 }
 .menu-container {
     position: relative;
     padding: 15px;
     overflow-y: scroll;
-    height: 300px;
+    max-height: 300px;
     border-bottom: 2px solid orange;
 }
 .menu-item {
@@ -109,7 +115,10 @@ button:active {
 
 .form-update-container{
     border: 2px solid black;
-    padding: 10px 15px;
+    padding: 10px 0px;
+    width: 100%;
+    height: auto;
+    position: relative;
 }
 
 
@@ -129,6 +138,8 @@ button:active {
     border: 2px solid black;
     width: 100%;
     padding: 5px 0px;
+    font-size: 20px;
+    font-weight: bold;
     text-align: center;
 }
 .order-container{
@@ -137,10 +148,6 @@ button:active {
     width: 100%;
     height: auto;
     max-height:100px;
-}
-.button-container{
-    margin-right: auto;
-    
 }
 .order{
     display: flex;
@@ -151,7 +158,21 @@ button:active {
     padding: 5px;
     border: 2px dotted black;
 }
-
+.order-container .name, 
+.total-price-container .total-price-text{
+    margin-left: 10px;
+}
+.order-container .price,
+.total-price-container .total-price{
+    margin-right: 10px;
+}
+.total-price, .total-price-text{
+    font-weight: bold;
+    font-size: large;
+}
+.button-container{
+    margin-right: auto;
+}
 .total-price-container{
     display: flex;
     justify-content: space-between;
@@ -159,16 +180,20 @@ button:active {
     flex-direction: row;
     border: 2px solid black;
     width: 100%;
-    padding: 10px 0px;
+    height: auto;
+    padding: 5px 0px;
 }
-.total-price-tag, .total-price{
+.total-price-text, .total-price{
     padding: 5px;
 }
 .complete-order-btn{
     margin: 5px auto;
-    padding: 5px 100px;
+    padding: 5px 80px;
     background-color: rgb(255, 136, 0);
     color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 20px;
 }
 
 .overlay {
