@@ -53,15 +53,18 @@ document.addEventListener('click', function(e){
     }
 
     if(e.target.dataset.payFormCloseBtn){
-        overlayEl.getElementById('overlay').classList.add('hidden')
+        if(selectedOrderArray.length > 1){
+            overlayEl.classList.add('hidden')
+        }
+        // overlayEl.getElementById('overlay').classList.add('hidden')
     }
 
     if (e.target.dataset.payBtn) {
         if(usernameId.value && cardId.value && cvvId.value){
-            overlayEl.getElementById('overlay').classList.add('hidden')
-            
-            formUpdateContainer.getElementById('overlay').classList.add('hidden')
-        }
+            overlayEl.classList.add('hidden')
+            e.preventDefault
+        }        
+    
     }
 })
 
@@ -70,7 +73,7 @@ function displaySelectedMenu(selectedOrderArray){
     for (let obj of selectedOrderArray){
         sumOfPrices += obj.price
     }
-    return `<div class="form-order ">
+    return `<div class="form-order">
                 <p class="order-form-title">Your order</p>
                 <div class="order-container" id="order-container">
                 </div>
@@ -119,7 +122,11 @@ function paymentForm(){
                 <button type="submit" class="pay-btn" data-pay-btn="true">Pay</button>
             </form>`
         }
-
+function paymentMessage(){
+    return `<div class="payment-complete hidden">
+                <p class="message">Thank you! Your order is on the way!</p>
+            </div>`
+}
 const formUpdateContainer = document.getElementById('form-update-container')
 
 function render() {
