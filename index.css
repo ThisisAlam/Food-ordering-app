@@ -1,14 +1,13 @@
 body {
     margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-    /* border: 5px solid black; */
-    /* max-height: 700px; */
+    font-family: 'Segoe UI', sans-serif;
+    background: #f5f5f5;
 }
+
+/* HEADER */
 header {
     max-width: 400px;
     margin: 0 auto;
-    border: 2px solid black;
     position:relative;
 }
 .floating-label{
@@ -26,232 +25,211 @@ header {
     height: 100px;
     object-fit: cover;
     object-position: bottom;
+     border-radius: 12px;
 }
+
+
+/* MAIN */
 main {
     max-width: 400px;
-    margin: 0 auto; 
+    margin: 0 auto;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
 }
-.complete-menu-form {
-    border: 2px solid black;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: column;
-    /* gap:10px; */
-}
+/* MENU */
 .menu-container {
-    position: relative;
     padding: 15px;
-    overflow-y: scroll;
     max-height: 300px;
-    border-bottom: 2px solid orange;
+    overflow-y: auto;
+    border-bottom: 3px solid #eeeeeec2;
 }
+
 .menu-item {
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
     align-items: center;
-    gap: 5px;
-    border: 2px solid black;
-    padding: 10px 0px;
-    position: relative;
-}
-.menu-item:hover .add-btn-container button {
-    color: rgb(255, 123, 0);
-    font-weight: bold;
-    transform: scale(1.1);
-    
-}
-.menu-container .food-img{
-    width: 60px;
-    height: auto;
+    gap: 15px;
     padding: 10px;
-    border: 2px solid black;
-    cursor: pointer;
-    transition: transform 0.15s ease;
+    height: 80px;
+    border-radius: 10px;
+    transition: 0.2s ease;
 }
-.food-img:hover, .food-img:focus {
-    transform: scale(1.02);
+
+.menu-item:hover {
+    background: #fafafa;
 }
+
+/* IMAGE */
+.food-img {
+    width: 55px;
+    padding: 8px;
+    border-radius: 10px;
+    background: #f2f2f2;
+}
+
+/* TEXT */
 .description {
-    border: 2px solid black;
-    display: flex;
-    justify-content: start;
-    align-items: start;
-    flex-direction: column;
-    padding: 5px;
-    gap:5px;
-    width: 100%;
+    flex: 1;
 }
-p {
-    margin: 0;
+
+.name {
+    font-weight: bold;
+    margin: 10px 0px 0px 0px;
 }
+
 .ingredients {
     font-size: 12px;
+    margin: 0;
+    color: #777;
 }
+
+.price {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* ADD BUTTON */
 .add-btn-container {
     display: flex;
     align-items: center;
-    justify-content: center;
-    border: 2px solid black;
-    padding: 10px;
-
 }
+
 .add-btn-container button {
-    font-size: 30px;
-    width: 50px;
-    height: 50px;
-    color: grey;
+    width: 45px;
+    height: 45px;
     border-radius: 50%;
+    border: none;
+    background: #f0f0f0;
+    font-size: 24px;
     cursor: pointer;
-    transition: transform 0.15s ease;
-}
-button:hover, button:focus {
-    transform: scale(1.05);
-}
-button:active {
-    transform: scale(1);
+    transition: 0.2s;
 }
 
-.form-update-container{
-    border: 2px solid black;
-    padding: 10px 0px;
-    width: 100%;
-    height: auto;
-    position: relative;
+.add-btn-container button:hover {
+    background: #ff8c00;
+    color: white;
+    transform: scale(1.1);
 }
 
+/* ORDER SECTION */
+.form-update-container {
+    padding: 10px;
+}
 
-/* You Order and Total Price Container */
-.form-order{
+.form-order {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;   
-    width: 100%;
-    position: relative;
-    /* margin-top: 10px; */
-    border: 2px solid black;
-    /* display: none; */
-}
-.order-form-title{
-    border: 2px solid black;
-    width: 100%;
-    padding: 5px 0px;
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-}
-.order-container{
-    overflow-y: scroll;
-    border: 2px solid red;
-    width: 100%;
-    height: auto;
-    max-height:100px;
-}
-.order{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
+    flex-direction: column;
     gap: 10px;
-    padding: 5px;
-    border: 2px dotted black;
 }
-.order-container .name, 
-.total-price-container .total-price-text{
-    margin-left: 10px;
-}
-.order-container .price,
-.total-price-container .total-price{
-    margin-right: 10px;
-}
-.total-price, .total-price-text{
+
+/* TITLE */
+.order-form-title {
+    text-align: center;
     font-weight: bold;
-    font-size: large;
+    font-size: 18px;
 }
-.button-container{
-    margin-right: auto;
+
+/* ORDER LIST */
+.order-container {
+    max-height: 120px;
+    overflow-y: auto;
 }
-.total-price-container{
+
+.order {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px;
+    border-bottom: 1px dashed #ddd;
+}
+
+.order .name {
+    flex: 1;
+}
+
+/* REMOVE BUTTON */
+.remove-btn {
+    font-size: 12px;
+    padding: 3px 8px;
+    border: none;
+    background: #eee;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.remove-btn:hover {
+    background: #ff4d4d;
+    color: white;
+}
+
+/* TOTAL */
+.total-price-container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-    border: 2px solid black;
-    width: 100%;
-    height: auto;
-    padding: 5px 0px;
+    font-weight: bold;
+    padding: 5px 0;
 }
-.total-price-text, .total-price{
-    padding: 5px;
-}
-.complete-order-btn{
-    margin: 5px auto;
-    padding: 5px 80px;
-    background-color: rgb(255, 136, 0);
+
+/* COMPLETE BUTTON */
+.complete-order-btn {
+    padding: 12px;
+    border: none;
+    border-radius: 25px;
+    background: #ff8c00;
     color: white;
     font-weight: bold;
-    font-size: 20px;
-    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.2s;
 }
 
+.complete-order-btn:hover {
+    background: #e67600;
+}
+
+/* MODAL */
 .overlay {
     position: fixed;
     inset: 0;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(0,0,0,0.5);
     display: flex;
     justify-content: center;
     align-items: center;
-    text-align: center;
 }
-.card-details{
+
+.card-details {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    width: 260px;
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
     gap: 10px;
-    background: white;
-    width: 250px;
-    padding: 20px;
-    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
-.close-btn{
-    margin:0;
-    margin-left: auto;
-}
-.close-btn button {
-    font-size: 20px;
-    width: 30px;
-    height: 30px;
-}
-.card-details h2{
-    margin:0;
-    margin-bottom: 10px;
-}
+
+/* INPUT */
 .card-details input {
     padding: 10px;
-    border: 2px solid black;
-    border-radius: 5px;
-    font-size: 14px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
 }
-.card-details input:focus {
-    outline: none;
-    border-color: rgb(236, 195, 132);
-}
-.pay-btn {
-    margin-top: 10px;
-    padding: 10px 60px;
-    font-size: 16px;
-    font-weight: bold;
 
+.card-details input:focus {
+    border-color: #ff8c00;
+    outline: none;
+}
+
+/* PAY BUTTON */
+.pay-btn {
+    padding: 10px;
     border: none;
-    border-radius: 5px;
-    background: rgb(255, 136, 0);
+    border-radius: 6px;
+    background: #ff8c00;
     color: white;
+    font-weight: bold;
     cursor: pointer;
 }
+
 .hidden {
     display: none;
-    position: none;
 }

@@ -55,7 +55,7 @@ document.addEventListener('click', function(e){
         document.getElementById('overlay').classList.add('hidden')
     }
 
-
+    
 })
 
 function displaySelectedMenu(selectedOrderArray){
