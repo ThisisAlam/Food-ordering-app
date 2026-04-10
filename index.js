@@ -8,7 +8,7 @@ function displayMenu(testArray){
                     <img class="food-img" src="${arr.emoji}" alt="pizza image">
                     <div class="description">
                         <p class="name" id="name">${arr.name}</p>
-                        <p class="ingredients" id="ingredients">${arr.ingredients}</p>
+                        <p class="ingredients" id="ingredients">${arr.ingredients.join(', ')}</p>
                         <p class="price" id="price">$${arr.price}</p>
                     </div>
                     <div class="add-btn-container">
@@ -18,39 +18,70 @@ function displayMenu(testArray){
     }).join('')
     return menuList
 }
-const selectedOrderArray = []
+
+let selectedOrderArray = []
 document.addEventListener('click', function(e){
     const targetId = e.target.dataset.btn
-    if(!targetId) {return} //ignore clicks
-
     for (let arr of testArray){
-        if (targetId === `${arr.id}`){
+        if (Number(targetId) === arr.id){
             selectedOrderArray.push({
                 name: arr.name,
-                price: arr.price
+                price: arr.price,
+                id: arr.id
             })
+            console.log(selectedOrderArray)
             render ()
-            return  
-        }
+            return
+        }  
+    }
+    
+    const targetIdRemoveBtn = e.target.dataset.removeBtn
+    if(targetIdRemoveBtn){
+        selectedOrderArray = selectedOrderArray.filter(obj => {
+            return obj.id !== Number(targetIdRemoveBtn)
+        })
+        console.log(selectedOrderArray)        
+        render()
     }
 })
-console.log(selectedOrderArray)
-const orderContainer = document.getElementById('order-container');
+
+function displaySelectedMenu(selectedOrderArray){
+    let sumOfPrices = 0
+    for (let obj of selectedOrderArray){
+        sumOfPrices += obj.price
+    }
+    return `<div class="form-order ">
+            <p class="order-form-title">Your order</p>
+            <div class="order-container" id="order-container">
+            </div>
+            <div class="total-price-container">
+                    <p class="total-price-tag">Total Price:</p>
+                    <p class="total-price">$${sumOfPrices}</p>
+                </div>
+            <button class="complete-order-btn">Complete Order</button>
+        </div>`
+}
+
+
 function selectedOrder(selectedOrderArray){
     const orderList = selectedOrderArray.map((orderArr) => {
         return `<div class="order">
-                    <p class="name">${orderArr.name}</p>
-                    <div class="button-container">
-                        <button class="remove-btn">remover</button>
-                    </div>
-                    <p class="price">$${orderArr.price}</p>
-                </div>`
+        <p class="name">${orderArr.name}</p>
+        <div class="button-container">
+        <button class="remove-btn" data-remove-btn="${orderArr.id}">remover</button>
+        </div>
+        <p class="price">$${orderArr.price}</p>
+        </div>`
     }).join('')
     return orderList
 }
 
+const formUpdateContainer = document.getElementById('form-update-container')
 function render() {
     menuContainer.innerHTML = displayMenu(testArray)
+    formUpdateContainer.innerHTML = displaySelectedMenu(selectedOrderArray)
+    
+    const orderContainer = document.getElementById('order-container');
     orderContainer.innerHTML = selectedOrder(selectedOrderArray)
 }
 render ()
