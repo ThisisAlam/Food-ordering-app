@@ -13,7 +13,8 @@ header {
 .floating-label{
     position: absolute;
     width: 100%;
-    left: 15%;
+    top:-5px;
+    left: 16%;
     color: azure;
     font-size: 40px;
     font-weight: bold;
@@ -25,7 +26,9 @@ header {
     height: 100px;
     object-fit: cover;
     object-position: bottom;
-     border-radius: 12px;
+    border-radius: 12px;
+    border-bottom-left-radius: 0;   
+    border-bottom-right-radius: 0;
 }
 
 
@@ -35,6 +38,8 @@ main {
     margin: 0 auto;
     background: white;
     border-radius: 12px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
     overflow: hidden;
 }
 /* MENU */
@@ -126,20 +131,27 @@ main {
 .order-form-title {
     text-align: center;
     font-weight: bold;
-    font-size: 18px;
+    background: #eeeeeec2;
+    border-radius: 10px;
+    font-size: 20px;
+    padding: 5px 0px;
+    margin: 5px 0px 0px 0px;
 }
 
 /* ORDER LIST */
 .order-container {
     max-height: 120px;
     overflow-y: auto;
+    /* background: #fffbf3f0; */
+    border-radius: 10px;
 }
 
 .order {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 5px;
     padding: 8px;
+    max-height: 35px;
     border-bottom: 1px dashed #ddd;
 }
 
@@ -167,11 +179,17 @@ main {
     display: flex;
     justify-content: space-between;
     font-weight: bold;
-    padding: 5px 0;
+    /* padding: 5px 0; */
+    margin: 5px 0;
+}
+.total-price-text, .total-price {
+    margin: 0;
 }
 
 /* COMPLETE BUTTON */
 .complete-order-btn {
+    width: 80%;
+    margin: 0px auto;
     padding: 12px;
     border: none;
     border-radius: 25px;
@@ -194,6 +212,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 
 .card-details {
@@ -213,12 +232,33 @@ main {
     border-radius: 6px;
     border: 1px solid #ccc;
 }
-
+.form-title{
+    margin: 5px 0px;
+    font-weight: bold;
+    font-size: 20px;
+}
 .card-details input:focus {
     border-color: #ff8c00;
     outline: none;
 }
-
+.close-btn {
+    display: flex;
+    justify-content: end;
+    align-items: end;
+}
+.close-btn button {
+    width: 30px;
+    height: 30px;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 5px;
+    background-color: #dedede;
+    border: none;
+}
+.close-btn button:hover{
+    background-color: #ff4d4d;
+    color: white;
+}
 /* PAY BUTTON */
 .pay-btn {
     padding: 10px;

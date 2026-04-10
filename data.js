@@ -21,10 +21,10 @@ export const menuArray = [
         id: 2
     },
         {
-        name: "Beer-lemon",
+        name: "Lemon Beer",
         ingredients: ["grain, hops, yeast, water, lemon"],
         price: 15,
-        emoji: "/images/beer.PNG",
+        emoji: "/images/lemon-beer.PNG",
         id: 3
     }
 ]
