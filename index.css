@@ -31,7 +31,9 @@ header {
     border-bottom-right-radius: 0;
 }
 
-
+span{
+    font-size: 12px;
+}
 /* MAIN */
 main {
     max-width: 400px;
@@ -46,6 +48,8 @@ main {
 .menu-container {
     padding: 15px;
     border-bottom: 3px solid #eeeeeec2;
+    max-height: 400px;
+    overflow-y: auto;
 }
 
 .menu-item {
@@ -118,6 +122,10 @@ main {
 .form-update-container {
     padding: 10px 20px;
     margin: 0;
+    max-height: 260px;
+    display: flex;
+    justify-content: end;
+    flex-direction: column;
 }
 
 .form-order {
@@ -232,18 +240,46 @@ main {
     box-shadow: 0 10px 25px rgba(0,0,0,0.2);
 }
 
+.thank-you {
+    margin: 10px 5px;
+    padding: 20px 25px;
+    background: #e8fdef;
+    border-radius: 12px;
+    text-align: center;
+    /* box-shadow: 0 6px 20px rgba(0,0,0,0.08); */
+    animation: fadeIn 0.4s ease;
+}
 
-.payment-complete{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 180px;
+.thank-you-text {
+    width: 100%;
+    font-size: 18px;
+    font-weight: 600;
+    color: #1b5e20;
+    margin-bottom: 15px;
+    
 }
-.payment-complete .message {
-    padding: 50px 20px;
-    font-weight: bold;
-    background-color: rgb(214, 239, 214);
+
+.back-btn {
+    background: #ff8c00;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.2s ease;
 }
+
+.back-btn:hover {
+    background: #e67e00;
+    transform: scale(1.05);
+}
+
+.back-btn:active {
+    transform: scale(0.98);
+}
+
+
 /* INPUT */
 .card-details input {
     padding: 10px;
@@ -292,7 +328,11 @@ main {
     font-weight: bold;
     cursor: pointer;
 }
-.overflow{
+.overflow1{
+    max-height: 350px;
+    overflow-y: auto;
+}
+.overflow2{
     max-height: 300px;
     overflow-y: auto;
 }

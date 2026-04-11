@@ -4,6 +4,7 @@ export const menuArray = [
         ingredients: ["pepperoni", "mushrom", "mozarella"],
         price: 14,
         emoji: "/images/pizza.PNG",
+        // count: 1,
         id: 0
     },
     {
@@ -11,20 +12,31 @@ export const menuArray = [
         ingredients: ["beef", "cheese", "lettuce"],
         price: 12,
         emoji: "/images/burger.PNG",
+        // count: 1,
         id: 1
+    },
+    {
+        name: "Zinger Burger",
+        ingredients: ["chicken", "cheese", "lettuce"],
+        price: 15,
+        emoji: "/images/burger.PNG",
+        // count: 1,
+        id: 2
     },
         {
         name: "Beer",
         ingredients: ["grain, hops, yeast, water"],
         price: 12,
         emoji: "/images/beer.PNG",
-        id: 2
+        // count: 1,
+        id: 3
     },
         {
         name: "Lemon Beer",
         ingredients: ["grain, hops, yeast, water, lemon"],
         price: 15,
         emoji: "/images/lemon-beer.PNG",
-        id: 3
+        // count: 1,
+        id: 4
     }
 ]
